@@ -1,0 +1,67 @@
+@use "../abstracts";
+
+.header {
+  padding: 0.975rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__logo {
+    &-menu {
+      margin-inline-end: 0.65rem;
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    &-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: absolute;
+      background-color: #fff;
+      height: 100svh;
+      width: 60%;
+      left: 0;
+      top: 0;
+      padding: 4rem 1.275rem;
+      z-index: 3;
+      visibility: hidden;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: abstracts.$very-dark-blue;
+      font-weight: abstracts.$bold-font-weight;
+
+      &-first {
+        display: inline-block;
+        margin-block-start: 1.275rem;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 20px;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    &-cart {
+      &-img {
+        cursor: pointer;
+      }
+    }
+
+    &-profile-img {
+      width: 25px;
+      cursor: pointer;
+    }
+  }
+}

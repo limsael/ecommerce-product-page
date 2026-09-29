@@ -11,4 +11,56 @@ body {
   font-size: 1rem;
 }
 
+.header {
+  padding: 0.975rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.header__logo-menu {
+  margin-inline-end: 0.65rem;
+  cursor: pointer;
+}
+.header__nav-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: absolute;
+  background-color: #fff;
+  height: 100svh;
+  width: 60%;
+  left: 0;
+  top: 0;
+  padding: 4rem 1.275rem;
+  z-index: 3;
+  visibility: hidden;
+}
+.header__nav-link {
+  text-decoration: none;
+  color: hsl(220, 13%, 13%);
+  font-weight: 700;
+}
+.header__nav-link-first {
+  display: inline-block;
+  margin-block-start: 1.275rem;
+}
+.header__nav-close {
+  position: absolute;
+  top: 20px;
+}
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.header__user-cart-img {
+  cursor: pointer;
+}
+.header__user-profile-img {
+  width: 25px;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */

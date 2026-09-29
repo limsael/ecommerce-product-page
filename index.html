@@ -20,13 +20,28 @@
     <header class="header">
       <div class="header__brand">
         <div class="header__logo">
-          <img src="./images/logo.svg" alt="Sneaker Company Logo" />
+          <img
+            src="./images/icon-menu.svg"
+            alt="Icon Menu"
+            class="header__logo-menu"
+            id="header-nav-toggle"
+          />
+
+          <a href="#">
+            <img
+              src="./images/logo.svg"
+              alt="Sneaker Company Logo"
+              class="header__logo-brand"
+            />
+          </a>
         </div>
 
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li>
-              <a href="#" class="header__nav-link">Collections</a>
+              <a href="#" class="header__nav-link header__nav-link-first"
+                >Collections</a
+              >
             </li>
 
             <li>
@@ -44,31 +59,139 @@
             <li>
               <a href="#" class="header__nav-link">Contact</a>
             </li>
+
+            <div>
+              <img
+                src="./images/icon-close.svg"
+                alt="Icon Close"
+                class="header__nav-close"
+                id="header-nav-close"
+              />
+            </div>
           </ul>
         </nav>
       </div>
 
       <div class="header__user">
-        <div class="header__cart">
+        <div class="header__user-cart">
           <img
             src="./images/icon-cart.svg"
             alt="Icon Cart"
-            class="header__cart-img"
+            class="header__user-cart-img"
           />
 
-          <div class="header__cart-details" id="header-cart-detail"></div>
+          <div class="header__user-cart-details" id="header-cart-detail"></div>
         </div>
 
-        <div class="header__profile">
+        <div class="header__user-profile">
           <img
             src="./images/image-avatar.png"
             alt="Image Avatar"
-            class="header__profile-img"
+            class="header__user-profile-img"
           />
         </div>
       </div>
     </header>
 
-    <main class="main"></main>
+    <main class="main">
+      <section class="main__images">
+        <div class="main__image-container">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="Image Produit 1"
+            class="main__image-main"
+          />
+
+          <img
+            src="./images/image-product-2.jpg"
+            alt="Image Product 2"
+            class="main__image-main"
+          />
+
+          <img
+            src="./images/image-product-3.jpg"
+            alt="Image Product 3"
+            class="main__image-main"
+          />
+
+          <img
+            src="./images/image-product-4.jpg"
+            alt="Image Product 4"
+            class="main__image-main"
+          />
+        </div>
+
+        <div class="main__image-thumbnail">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Image Product 1 - Thumbnail"
+          />
+
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="Image Product 2 - Thumbnail"
+          />
+
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="Image Product 3 - Thumbnail"
+          />
+
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="Image Product 4 - Thumbnail"
+          />
+        </div>
+      </section>
+      <section class="main__info">
+        <h2 class="main__info-subtitle">Sneaker Company</h2>
+
+        <h1 class="main__info-title">Fall Limited Edition Sneakers</h1>
+
+        <p class="main__info-description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="main__info-pricing">
+          <h3 class="main__info-pricing-price">
+            $125.00
+            <span class="main__info-pricing-price-sale"> 50% </span>
+          </h3>
+
+          <p class="main__info-pricing-price-old">$250.00</p>
+        </div>
+
+        <div class="main__info-checkout">
+          <form action="" class="main__info-form" id="main-info-form">
+            <input
+              type="number"
+              id="main-info-checkout"
+              value="0"
+              class="main__info-form-input"
+            />
+
+            <img
+              src="./images/icon-minus.svg"
+              alt="Icon Minus"
+              class="main__info-form-minus"
+              id="main-form-minus"
+            />
+
+            <img
+              src="./images/icon-plus.svg"
+              alt="Icon Plus"
+              class="main__info-form-plus"
+              id="main-form-plus"
+            />
+
+            <button class="main__info-form-btn" id="main-info-btn">
+              Add to cart
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
