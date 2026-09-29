@@ -12,6 +12,11 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Frontend Mentor | E-commerce product page</title>
@@ -143,8 +148,9 @@
           />
         </div>
       </section>
+
       <section class="main__info">
-        <h2 class="main__info-subtitle">Sneaker Company</h2>
+        <p class="main__info-subtitle">Sneaker Company</p>
 
         <h1 class="main__info-title">Fall Limited Edition Sneakers</h1>
 
@@ -160,34 +166,35 @@
             <span class="main__info-pricing-price-sale"> 50% </span>
           </h3>
 
-          <p class="main__info-pricing-price-old">$250.00</p>
+          <p class="main__info-pricing-old">$250.00</p>
         </div>
 
         <div class="main__info-checkout">
           <form action="" class="main__info-form" id="main-info-form">
-            <input
-              type="number"
-              id="main-info-checkout"
-              value="0"
-              class="main__info-form-input"
-            />
-
-            <img
-              src="./images/icon-minus.svg"
-              alt="Icon Minus"
-              class="main__info-form-minus"
-              id="main-form-minus"
-            />
-
-            <img
-              src="./images/icon-plus.svg"
-              alt="Icon Plus"
-              class="main__info-form-plus"
-              id="main-form-plus"
-            />
+            <div class="main__info-form-group">
+              <input
+                type="text"
+                id="main-info-checkout"
+                value="0"
+                class="main__info-form-input"
+              />
+              <img
+                src="./images/icon-minus.svg"
+                alt="Icon Minus"
+                class="main__info-form-minus"
+                id="main-form-minus"
+              />
+              <img
+                src="./images/icon-plus.svg"
+                alt="Icon Plus"
+                class="main__info-form-plus"
+                id="main-form-plus"
+              />
+            </div>
 
             <button class="main__info-form-btn" id="main-info-btn">
-              Add to cart
+              <img src="./images/icon-cart.svg" alt="Image Cart" />
+              <span>Add to cart</span>
             </button>
           </form>
         </div>

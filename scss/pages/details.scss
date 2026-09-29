@@ -1,1 +1,52 @@
 @use "../abstracts";
+
+.main {
+  &__info {
+    padding: 0 0.975rem 0.975rem;
+
+    &-subtitle {
+      text-transform: uppercase;
+      color: abstracts.$grayish-blue;
+      font-weight: abstracts.$bold-font-weight;
+      letter-spacing: 2px;
+      font-size: 0.875rem;
+    }
+
+    &-title {
+      margin-block: 0.975rem;
+    }
+
+    &-description {
+      color: abstracts.$dark-grayish-blue;
+      line-height: 1.5;
+    }
+
+    &-pricing {
+      margin-block: 0.975rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-price {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+
+        &-sale {
+          background-color: abstracts.$black-bg;
+          color: abstracts.$light-grayish-blue;
+          font-size: 0.875rem;
+          padding: 0.125rem 0.625rem;
+          border-radius: 0.25rem;
+        }
+      }
+
+      &-old {
+        color: abstracts.$grayish-blue;
+        font-weight: abstracts.$bold-font-weight;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

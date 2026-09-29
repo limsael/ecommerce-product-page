@@ -1,1 +1,86 @@
 @use "../abstracts";
+
+.main {
+  &__info {
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-block-start: 0.975rem;
+
+      &-group {
+        position: relative;
+      }
+
+      &-input {
+        width: 100%;
+        padding: 0.675rem;
+        text-align: center;
+        background-color: abstracts.$light-grayish-blue;
+        color: abstracts.$very-dark-blue;
+        font-family: abstracts.$font-family;
+        font-weight: abstracts.$bold-font-weight;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        border-radius: 0.325rem;
+        transition: outline 0.3s ease-in-out;
+
+        &:focus {
+          outline: 1px solid abstracts.$orange;
+        }
+      }
+
+      &-minus,
+      &-plus {
+        position: absolute;
+        color: abstracts.$orange;
+        font-size: 1rem;
+
+        &:hover {
+          filter: brightness(1.36) saturate(0.85);
+        }
+      }
+
+      &-minus {
+        top: 50%;
+        left: 20px;
+        translate: 0 -50%;
+        cursor: pointer;
+      }
+
+      &-plus {
+        top: 50%;
+        right: 20px;
+        translate: 0 -50%;
+        cursor: pointer;
+      }
+
+      &-btn {
+        padding: 0.975rem 0.875rem;
+        border: none;
+        border-radius: 0.625rem;
+        outline: none;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: abstracts.$bold-font-weight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        background-color: abstracts.$orange;
+        color: abstracts.$very-dark-blue;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+          background-color: abstracts.$light-orange;
+        }
+
+        img {
+          filter: brightness(0.22) saturate(0.8);
+        }
+      }
+    }
+  }
+}
