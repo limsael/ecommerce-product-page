@@ -22,6 +22,22 @@ body {
   margin-inline-end: 0.65rem;
   cursor: pointer;
 }
+.header__nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100svw;
+  height: 100svh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+.header__nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
 .header__nav-list {
   list-style-type: none;
   display: flex;
@@ -34,8 +50,14 @@ body {
   left: 0;
   top: 0;
   padding: 4rem 1.275rem;
-  z-index: 3;
+  translate: -100% 0;
   visibility: hidden;
+  transition: translate 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  z-index: 3;
+}
+.header__nav-list.active {
+  translate: 0 0;
+  visibility: visible;
 }
 .header__nav-link {
   text-decoration: none;
