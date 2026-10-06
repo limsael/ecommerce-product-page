@@ -4,7 +4,6 @@
   &__image-container {
     position: relative;
     display: flex;
-    gap: 3px;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
