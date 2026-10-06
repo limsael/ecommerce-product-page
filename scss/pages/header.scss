@@ -83,8 +83,44 @@
     gap: 0.625rem;
 
     &-cart {
+      // position: relative;
+
       &-img {
         cursor: pointer;
+      }
+
+      &-detail {
+        position: absolute;
+        background-color: abstracts.$white;
+        width: 95%;
+        height: 300px;
+        top: 65px;
+        border-radius: 0.625rem;
+        translate: -83% -150%;
+        visibility: hidden;
+        transition:
+          visibility 0.3s ease-in-out,
+          translate 0.3s ease-in-out;
+        z-index: 1;
+
+        &.active {
+          translate: -83% 0;
+          visibility: visible;
+        }
+        // padding: 0.925rem;
+
+        &-title {
+          font-weight: abstracts.$bold-font-weight;
+          color: abstracts.$very-dark-blue;
+          margin-block-end: 1.275rem;
+          padding: 0.925rem 0.9725rem 0;
+        }
+
+        &-description {
+          border-top: 1px solid abstracts.$dark-grayish-blue;
+          color: abstracts.$dark-grayish-blue;
+          font-weight: abstracts.$bold-font-weight;
+        }
       }
     }
 
