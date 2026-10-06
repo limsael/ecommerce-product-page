@@ -14,7 +14,7 @@
 
       &-input {
         width: 100%;
-        padding: 0.675rem;
+        padding: 0.675rem 2.5rem;
         text-align: center;
         background-color: abstracts.$light-grayish-blue;
         color: abstracts.$very-dark-blue;
@@ -25,6 +25,15 @@
         outline: none;
         border-radius: 0.325rem;
         transition: outline 0.3s ease-in-out;
+
+        appearance: textfield;
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
 
         &:focus {
           outline: 1px solid abstracts.$orange;

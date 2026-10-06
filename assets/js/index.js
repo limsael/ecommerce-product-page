@@ -7,6 +7,11 @@ const navClose = document.querySelector(".header__nav-close");
 const cartIcon = document.getElementById("header-cart-icon");
 const cartDetail = document.getElementById("header-cart-detail");
 
+const checkoutForm = document.getElementById("main-checkout-form");
+const checkoutFormInput = document.getElementById("main-checkout-form-input");
+const checkoutFormDecrement = document.getElementById("main-form-minus");
+const checkoutFormIncrement = document.getElementById("main-form-plus");
+
 /* =================== Functions =================== */
 
 function toggleNav() {
@@ -23,6 +28,29 @@ function toggleCartDetail() {
   cartDetail.classList.toggle("active");
 }
 
+function handleCheckoutFormDecrement() {
+  if (checkoutFormInput.value > 0) {
+    checkoutFormInput.value--;
+  }
+}
+
+function handleCheckoutFormIncrement() {
+  checkoutFormInput.value++;
+}
+
+function handleCheckoutForm(e) {
+  e.preventDefault();
+
+  if (checkoutFormInput.value <= 0 || isNaN(checkoutFormInput.value)) {
+    alert("Please enter a number greater than 0 to checkout.");
+    checkoutFormInput.value = 0;
+  } else {
+    alert(
+      `You have successfully checked out ${checkoutFormInput.value} items!`,
+    );
+  }
+}
+
 /* =================== Events =================== */
 
 navToggle.addEventListener("click", toggleNav);
@@ -34,3 +62,9 @@ navLinks.forEach((navLink) => {
 });
 
 cartIcon.addEventListener("click", toggleCartDetail);
+
+checkoutForm.addEventListener("submit", handleCheckoutForm);
+
+checkoutFormDecrement.addEventListener("click", handleCheckoutFormDecrement);
+
+checkoutFormIncrement.addEventListener("click", handleCheckoutFormIncrement);
