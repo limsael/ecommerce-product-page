@@ -7,6 +7,10 @@ const navClose = document.querySelector(".header__nav-close");
 const cartIcon = document.getElementById("header-cart-icon");
 const cartDetail = document.getElementById("header-cart-detail");
 
+const slideContainer = document.getElementById("slide-container");
+const prevBtn = document.getElementById("slide-prev");
+const nextBtn = document.getElementById("slide-next");
+
 const checkoutForm = document.getElementById("main-checkout-form");
 const checkoutFormInput = document.getElementById("main-checkout-form-input");
 const checkoutFormDecrement = document.getElementById("main-form-minus");
@@ -51,6 +55,24 @@ function handleCheckoutForm(e) {
   }
 }
 
+function moveSlidePrev() {
+  const slideWidth = slideContainer.clientWidth;
+
+  slideContainer.scrollBy({
+    left: -slideWidth,
+    behavior: "smooth",
+  });
+}
+
+function moveSlideNext() {
+  const slideWidth = slideContainer.clientWidth;
+
+  slideContainer.scrollBy({
+    left: slideWidth,
+    behavior: "smooth",
+  });
+}
+
 /* =================== Events =================== */
 
 navToggle.addEventListener("click", toggleNav);
@@ -68,3 +90,6 @@ checkoutForm.addEventListener("submit", handleCheckoutForm);
 checkoutFormDecrement.addEventListener("click", handleCheckoutFormDecrement);
 
 checkoutFormIncrement.addEventListener("click", handleCheckoutFormIncrement);
+
+prevBtn.addEventListener("click", moveSlidePrev);
+nextBtn.addEventListener("click", moveSlideNext);

@@ -9,6 +9,7 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  overflow: hidden;
 }
 
 .header {
@@ -113,10 +114,48 @@ body {
 }
 
 .main__image-container {
+  position: relative;
+  display: flex;
+  gap: 3px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
   margin-block-end: 0.975rem;
+}
+.main__image-container::-webkit-scrollbar {
+  display: none;
 }
 .main__image-container img {
   width: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+.main__image-btn {
+  position: relative;
+}
+.main__image-left, .main__image-right {
+  position: absolute;
+  top: 25%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.main__image-left:hover, .main__image-right:hover {
+  filter: brightness(1.36) saturate(0.85);
+}
+.main__image-left {
+  left: 0;
+  translate: 0 -25%;
+}
+.main__image-right {
+  right: 0;
+  translate: 0 -25%;
 }
 .main__image-thumbnail {
   display: none;

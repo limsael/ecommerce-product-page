@@ -83,8 +83,6 @@
     gap: 0.625rem;
 
     &-cart {
-      // position: relative;
-
       &-img {
         cursor: pointer;
       }
@@ -107,7 +105,6 @@
           translate: -83% 0;
           visibility: visible;
         }
-        // padding: 0.925rem;
 
         &-title {
           font-weight: abstracts.$bold-font-weight;
