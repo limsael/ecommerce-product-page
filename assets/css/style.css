@@ -9,15 +9,16 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  overflow: hidden;
 }
 
 .header {
   padding: 0.975rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: relative;
+}
+.header__logo-brand {
+  cursor: pointer;
 }
 .header__logo-menu {
   margin-inline-end: 0.65rem;
@@ -75,6 +76,7 @@ body {
   cursor: pointer;
 }
 .header__user {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -85,17 +87,17 @@ body {
 .header__user-cart-detail {
   position: absolute;
   background-color: hsl(0, 0%, 100%);
-  width: 95%;
+  width: 98%;
   height: 300px;
   top: 65px;
   border-radius: 0.625rem;
-  translate: -83% -150%;
+  translate: -80% -150%;
   visibility: hidden;
   transition: visibility 0.3s ease-in-out, translate 0.3s ease-in-out;
   z-index: 2;
 }
 .header__user-cart-detail.active {
-  translate: -83% 0;
+  translate: -80% 0;
   visibility: visible;
 }
 .header__user-cart-detail-title {
@@ -114,8 +116,10 @@ body {
   cursor: pointer;
 }
 
-.main__image-container {
+.main__images {
   position: relative;
+}
+.main__image-container {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -131,12 +135,9 @@ body {
   flex: 0 0 100%;
   scroll-snap-align: start;
 }
-.main__image-btn {
-  position: relative;
-}
 .main__image-left, .main__image-right {
   position: absolute;
-  top: 25%;
+  top: 50%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
   padding: 0.625rem;
@@ -150,12 +151,30 @@ body {
   filter: brightness(1.36) saturate(0.85);
 }
 .main__image-left {
-  left: 10px;
-  translate: 0 -25%;
+  left: 8px;
+  translate: 0 -50%;
 }
 .main__image-right {
-  right: 10px;
-  translate: 0 -25%;
+  right: 8px;
+  translate: 0 -50%;
+}
+.main__image-thumbnail {
+  justify-content: space-between;
+  gap: 0.625rem;
+}
+.main__image-thumbnail-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.main__image-thumbnail-img.active {
+  border: 3px solid hsl(26, 100%, 55%);
+  opacity: 0.3;
+}
+.main__image-thumbnail-img:hover, .main__image-thumbnail-img:focus-visible {
+  opacity: 0.4;
 }
 .main__image-thumbnail {
   display: none;
@@ -281,6 +300,93 @@ body {
 }
 .main__info-form-btn img {
   filter: brightness(0.22) saturate(0.8);
+}
+
+@media (min-width: 992px) {
+  .header {
+    padding: 1.975rem 1.275rem;
+    gap: 3.75rem;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 1px;
+    background-color: hsl(220, 14%, 75%);
+    bottom: 10px;
+  }
+  .header__logo-menu {
+    display: none;
+  }
+  .header__nav-close {
+    display: none;
+  }
+  .header__nav-list {
+    position: relative;
+    padding: 0;
+    translate: 0 0;
+    visibility: visible;
+    background-color: transparent;
+    flex-direction: row;
+    height: auto;
+  }
+  .header__nav-link {
+    position: relative;
+    display: inline-block;
+    color: hsl(219, 9%, 45%);
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
+  }
+  .header__nav-link::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -2.5rem;
+    height: 4px;
+    background-color: hsl(26, 100%, 55%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .header__nav-link:hover::after, .header__nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+  .header__nav-link-first {
+    margin-block-start: 0;
+  }
+  .header__user {
+    gap: 1.975rem;
+  }
+  .header__user-profile-img {
+    width: 50px;
+  }
+  .main {
+    padding: 0 1.275rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin-block-start: 3.5rem;
+  }
+  .main__image-main {
+    border-radius: 0.975rem;
+    cursor: pointer;
+  }
+  .main__image-left, .main__image-right {
+    display: none;
+  }
+  .main__image-thumbnail {
+    display: flex;
+  }
+  .main__info {
+    margin-block-start: 3.5rem;
+  }
+  .main__info-title {
+    font-size: 2.75rem;
+  }
+  .main__info-pricing {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,11 +3,14 @@
 .header {
   padding: 0.975rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: relative;
 
   &__logo {
+    &-brand {
+      cursor: pointer;
+    }
+
     &-menu {
       margin-inline-end: 0.65rem;
       cursor: pointer;
@@ -79,6 +82,7 @@
   }
 
   &__user {
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 0.625rem;
@@ -91,11 +95,11 @@
       &-detail {
         position: absolute;
         background-color: abstracts.$white;
-        width: 95%;
+        width: 98%;
         height: 300px;
         top: 65px;
         border-radius: 0.625rem;
-        translate: -83% -150%;
+        translate: -80% -150%;
         visibility: hidden;
         transition:
           visibility 0.3s ease-in-out,
@@ -103,7 +107,7 @@
         z-index: 2;
 
         &.active {
-          translate: -83% 0;
+          translate: -80% 0;
           visibility: visible;
         }
 

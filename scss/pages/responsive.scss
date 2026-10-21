@@ -1,1 +1,113 @@
 @use "../abstracts";
+
+@media (min-width: 992px) {
+  .header {
+    padding: 1.975rem 1.275rem;
+    gap: 3.75rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 95%;
+      height: 1px;
+      background-color: abstracts.$grayish-blue;
+      bottom: 10px;
+    }
+
+    &__logo {
+      &-menu {
+        display: none;
+      }
+    }
+
+    &__nav {
+      &-close {
+        display: none;
+      }
+
+      &-list {
+        position: relative;
+        padding: 0;
+        translate: 0 0;
+        visibility: visible;
+        background-color: transparent;
+        flex-direction: row;
+        height: auto;
+      }
+
+      &-link {
+        position: relative;
+        display: inline-block;
+        color: abstracts.$dark-grayish-blue;
+        font-weight: abstracts.$font-weight;
+        transition: color 0.3s ease-in-out;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset-inline: 0;
+          bottom: -2.5rem;
+          height: 4px;
+          background-color: abstracts.$orange;
+          transform: scaleX(0);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover::after,
+        &:focus-visible::after {
+          transform: scaleX(1);
+        }
+
+        &-first {
+          margin-block-start: 0;
+        }
+      }
+    }
+
+    &__user {
+      gap: 1.975rem;
+
+      &-profile-img {
+        width: 50px;
+      }
+    }
+  }
+
+  .main {
+    padding: 0 1.275rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin-block-start: 3.5rem;
+
+    &__image {
+      &-main {
+        border-radius: 0.975rem;
+        cursor: pointer;
+      }
+
+      &-left,
+      &-right {
+        display: none;
+      }
+    }
+
+    &__image-thumbnail {
+      display: flex;
+    }
+
+    &__info {
+      margin-block-start: 3.5rem;
+
+      &-title {
+        font-size: 2.75rem;
+      }
+
+      &-pricing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem;
+      }
+    }
+  }
+}
