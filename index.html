@@ -66,14 +66,12 @@
               <a href="#" class="header__nav-link">Contact</a>
             </li>
 
-            <div>
-              <img
-                src="./images/icon-close.svg"
-                alt="Icon Close"
-                class="header__nav-close"
-                id="header-nav-close"
-              />
-            </div>
+            <img
+              src="./images/icon-close.svg"
+              alt="Icon Close"
+              class="header__nav-close"
+              id="header-nav-close"
+            />
           </ul>
         </nav>
       </div>
@@ -175,22 +173,28 @@
         </p>
 
         <div class="main__info-pricing">
-          <h3 class="main__info-pricing-price">
+          <p class="main__info-pricing-price">
             $125.00
             <span class="main__info-pricing-price-sale"> 50% </span>
-          </h3>
+          </p>
 
           <p class="main__info-pricing-old">$250.00</p>
         </div>
 
         <div class="main__info-checkout">
-          <form action="" class="main__info-form" id="main-checkout-form">
+          <form
+            action=""
+            method="post"
+            class="main__info-form"
+            id="main-checkout-form"
+          >
             <div class="main__info-form-group">
               <input
                 type="number"
                 id="main-checkout-form-input"
                 value="0"
                 class="main__info-form-input"
+                required
               />
               <img
                 src="./images/icon-minus.svg"
@@ -207,7 +211,11 @@
             </div>
 
             <button class="main__info-form-btn" id="main-info-btn">
-              <img src="./images/icon-cart.svg" alt="Image Cart" />
+              <img
+                src="./images/icon-cart.svg"
+                alt="Image Cart"
+                aria-hidden="true"
+              />
               <span>Add to cart</span>
             </button>
           </form>

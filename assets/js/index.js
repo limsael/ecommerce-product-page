@@ -52,6 +52,7 @@ function handleCheckoutForm(e) {
     alert(
       `You have successfully checked out ${checkoutFormInput.value} items!`,
     );
+    checkoutFormInput.value = 0;
   }
 }
 

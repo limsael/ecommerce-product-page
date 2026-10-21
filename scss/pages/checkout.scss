@@ -83,7 +83,13 @@
         transition: background-color 0.3s ease-in-out;
 
         &:hover {
-          background-color: abstracts.$light-orange;
+          background-color:
+            abstracts.$light-orange,
+            outline 0.3s ease-in-out;
+        }
+
+        &:focus {
+          outline: 2px solid abstracts.$very-dark-blue;
         }
 
         img {

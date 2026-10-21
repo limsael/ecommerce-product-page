@@ -29,11 +29,9 @@
     &-right {
       position: absolute;
       top: 25%;
-      // left: 0;
-      // translate: 0 -25%;
       background-color: abstracts.$white;
-      border-radius: 9999px;
-      padding: 0.5rem;
+      border-radius: 50%;
+      padding: 0.625rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,12 +44,12 @@
     }
 
     &-left {
-      left: 0;
+      left: 10px;
       translate: 0 -25%;
     }
 
     &-right {
-      right: 0;
+      right: 10px;
       translate: 0 -25%;
     }
   }
