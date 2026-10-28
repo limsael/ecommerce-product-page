@@ -70,6 +70,10 @@ function renderCart() {
     cartQuantity = 0;
     renderCart();
   });
+
+  cartDescription.querySelector(".header__user-cart-checkout").addEventListener("click", () => {
+    alert(`Checkout ${cartQuantity} item${cartQuantity === 1 ? "" : "s"} totaling $${total}.`);
+  });
 }
 
 function toggleCartDetail() {
@@ -112,28 +116,31 @@ function showPrev() {
 }
 
 function handleCheckoutFormDecrement() {
-  if (checkoutFormInput.value > 0) {
-    checkoutFormInput.value--;
-  }
+  const currentQuantity = Number.parseInt(checkoutFormInput.value, 10) || 0;
+  checkoutFormInput.value = Math.max(0, currentQuantity - 1);
 }
 
 function handleCheckoutFormIncrement() {
-  checkoutFormInput.value++;
+  const currentQuantity = Number.parseInt(checkoutFormInput.value, 10) || 0;
+  checkoutFormInput.value = currentQuantity + 1;
 }
 
 function handleCheckoutForm(e) {
   e.preventDefault();
 
-  if (checkoutFormInput.value <= 0 || isNaN(checkoutFormInput.value)) {
-    alert("Please enter a number greater than 0 to checkout.");
+  const selectedQuantity = Number.parseInt(checkoutFormInput.value, 10);
+
+  if (!Number.isInteger(selectedQuantity) || selectedQuantity <= 0) {
+    alert("Please enter a number greater than 0 to add to the cart.");
     checkoutFormInput.value = 0;
-  } else {
-    cartQuantity += Number(checkoutFormInput.value);
-    checkoutFormInput.value = 0;
-    renderCart();
-    cartDetail.classList.add("active");
-    cartButton.setAttribute("aria-expanded", "true");
+    return;
   }
+
+  cartQuantity += selectedQuantity;
+  checkoutFormInput.value = 0;
+  renderCart();
+  cartDetail.classList.add("active");
+  cartButton.setAttribute("aria-expanded", "true");
 }
 
 function moveSlidePrev() {
@@ -201,6 +208,17 @@ lightBoxPrevBtn.addEventListener("click", showPrev);
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
     closeLightbox();
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    cartDetail.classList.contains("active") &&
+    !cartDetail.contains(e.target) &&
+    !cartButton.contains(e.target)
+  ) {
+    cartDetail.classList.remove("active");
+    cartButton.setAttribute("aria-expanded", "false");
   }
 });
 

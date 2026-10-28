@@ -132,3 +132,18 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .header__user-cart-detail {
+    position: fixed;
+    top: 76px;
+    right: 0.5rem;
+    left: 0.5rem;
+    width: auto;
+    max-width: none;
+  }
+
+  .header__user-cart-detail-description {
+    min-height: 160px;
+  }
+}
