@@ -11,6 +11,16 @@ const slideContainer = document.getElementById("slide-container");
 const prevBtn = document.getElementById("slide-prev");
 const nextBtn = document.getElementById("slide-next");
 
+const thumbnails = document.querySelectorAll(".main__image-thumbnail-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightBoxCloseBtn = document.querySelector(".lightbox-close");
+const lightBoxPrevBtn = document.querySelector(".lightbox-prev");
+const lightBoxNextBtn = document.querySelector(".lightbox-next");
+const lightboxThumbnails = document.querySelectorAll(".lightbox__thumbnail");
+const mainProductImages = document.querySelectorAll(".main__image-main");
+let lightboxCurrentIndex = 0;
+
 const checkoutForm = document.getElementById("main-checkout-form");
 const checkoutFormInput = document.getElementById("main-checkout-form-input");
 const checkoutFormDecrement = document.getElementById("main-form-minus");
@@ -30,6 +40,40 @@ function closeNav() {
 
 function toggleCartDetail() {
   cartDetail.classList.toggle("active");
+}
+
+function getFullSizeSrc(thumbnailSrc) {
+  return thumbnailSrc.replace("-thumbnail", "");
+}
+
+function updateLightbox(index) {
+  lightboxCurrentIndex = index;
+  lightboxImg.src = getFullSizeSrc(thumbnails[index].src);
+  lightboxThumbnails.forEach((thumbnail, thumbnailIndex) => {
+    thumbnail.classList.toggle("active", thumbnailIndex === index);
+  });
+}
+
+function openLightbox(index) {
+  updateLightbox(index);
+  lightbox.style.display = "flex";
+  document.body.style.overflow = "hidden";
+  lightBoxCloseBtn.focus();
+}
+
+function closeLightbox() {
+  lightbox.style.display = "none";
+  document.body.style.overflow = "";
+}
+
+function showNext() {
+  updateLightbox((lightboxCurrentIndex + 1) % thumbnails.length);
+}
+
+function showPrev() {
+  updateLightbox(
+    (lightboxCurrentIndex - 1 + thumbnails.length) % thumbnails.length,
+  );
 }
 
 function handleCheckoutFormDecrement() {
@@ -94,3 +138,39 @@ checkoutFormIncrement.addEventListener("click", handleCheckoutFormIncrement);
 
 prevBtn.addEventListener("click", moveSlidePrev);
 nextBtn.addEventListener("click", moveSlideNext);
+
+thumbnails.forEach((thumbnail, index) => {
+  thumbnail.addEventListener("click", () => {
+    openLightbox(index);
+  });
+});
+
+mainProductImages.forEach((image, index) => {
+  image.addEventListener("click", () => {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      openLightbox(index);
+    }
+  });
+});
+
+lightboxThumbnails.forEach((thumbnail, index) => {
+  thumbnail.addEventListener("click", () => updateLightbox(index));
+});
+
+lightBoxCloseBtn.addEventListener("click", closeLightbox);
+lightBoxNextBtn.addEventListener("click", showNext);
+lightBoxPrevBtn.addEventListener("click", showPrev);
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (lightbox.style.display === "flex") {
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+  }
+});

@@ -229,6 +229,42 @@
       </section>
     </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Product image gallery">
+      <div class="lightbox__gallery">
+        <button class="lightbox-close" aria-label="Close lightbox">
+          <img src="./images/icon-close.svg" alt="" />
+        </button>
+
+        <div class="lightbox__media">
+          <button class="lightbox-prev" aria-label="Previous image">
+            <img src="./images/icon-previous.svg" alt="" />
+          </button>
+          <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Lightbox zoom view" />
+          </div>
+          <button class="lightbox-next" aria-label="Next image">
+            <img src="./images/icon-next.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="lightbox__thumbnails" aria-label="Choose a product image">
+          <button class="lightbox__thumbnail active" type="button" aria-label="Show product image 1">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+          </button>
+          <button class="lightbox__thumbnail" type="button" aria-label="Show product image 2">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+          </button>
+          <button class="lightbox__thumbnail" type="button" aria-label="Show product image 3">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+          </button>
+          <button class="lightbox__thumbnail" type="button" aria-label="Show product image 4">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/js/index.js"></script>
   </body>
 </html>
