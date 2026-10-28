@@ -109,11 +109,11 @@
     gap: 3.5rem;
     margin-block-start: 3.5rem;
 
-    &__image-container {
-      img:nth-child(n + 2) {
-        display: none;
-      }
-    }
+    // &__image-container {
+    //   img:nth-child(n + 2) {
+    //     display: none;
+    //   }
+    // }
 
     &__image {
       &-main {

@@ -1,0 +1,134 @@
+@use "../abstracts";
+
+.header {
+  &__user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    &-cart {
+      &-img {
+        cursor: pointer;
+      }
+
+      position: relative;
+
+      &-button {
+        position: relative;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      &-count {
+        position: absolute;
+        top: -7px;
+        right: -8px;
+        min-width: 19px;
+        padding: 1px 6px;
+        border-radius: 999px;
+        background-color: abstracts.$orange;
+        color: abstracts.$white;
+        font-size: 0.625rem;
+        font-weight: abstracts.$bold-font-weight;
+      }
+
+      &-detail {
+        position: absolute;
+        top: 3.25rem;
+        right: -4.5rem;
+        width: 360px;
+        max-width: calc(100vw - 2rem);
+        border-radius: 0.625rem;
+        background-color: abstracts.$white;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 5;
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+
+        &-title {
+          padding: 1.4rem 1.5rem;
+          border-bottom: 1px solid abstracts.$grayish-blue;
+          color: abstracts.$very-dark-blue;
+          font-weight: abstracts.$bold-font-weight;
+        }
+
+        &-description {
+          min-height: 175px;
+          padding: 1.5rem;
+          color: abstracts.$dark-grayish-blue;
+          font-size: 0.9375rem;
+        }
+      }
+
+      &-empty {
+        min-height: 125px;
+        display: grid;
+        place-items: center;
+        font-weight: abstracts.$bold-font-weight;
+      }
+
+      &-item {
+        display: grid;
+        grid-template-columns: 50px 1fr 14px;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &-item-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 0.25rem;
+      }
+
+      &-item-name {
+        line-height: 1.45;
+      }
+
+      &-item-total {
+        color: abstracts.$very-dark-blue;
+        font-weight: abstracts.$bold-font-weight;
+      }
+
+      &-delete {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      &-checkout {
+        width: 100%;
+        padding: 1rem;
+        border: 0;
+        border-radius: 0.625rem;
+        background-color: abstracts.$orange;
+        color: abstracts.$very-dark-blue;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: abstracts.$bold-font-weight;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+          background-color: abstracts.$light-orange;
+        }
+      }
+    }
+
+    &-profile-img {
+      width: 25px;
+      cursor: pointer;
+    }
+  }
+}

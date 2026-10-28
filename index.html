@@ -80,17 +80,21 @@
 
       <div class="header__user">
         <div class="header__user-cart">
-          <img
-            src="./images/icon-cart.svg"
-            alt="Icon Cart"
-            class="header__user-cart-img"
-            id="header-cart-icon"
-          />
+          <button class="header__user-cart-button" id="header-cart-button" aria-label="Open cart" aria-expanded="false">
+            <img
+              src="./images/icon-cart.svg"
+              alt=""
+              class="header__user-cart-img"
+              id="header-cart-icon"
+            />
+            <span class="header__user-cart-count" id="header-cart-count" hidden>0</span>
+          </button>
 
           <div class="header__user-cart-detail" id="header-cart-detail">
             <p class="header__user-cart-detail-title">Cart</p>
-
-            <p class="header__user-cart-detail-description"></p>
+            <div class="header__user-cart-detail-description" id="header-cart-description">
+              <p class="header__user-cart-empty">Your cart is empty.</p>
+            </div>
           </div>
         </div>
 
